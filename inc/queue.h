@@ -15,7 +15,10 @@ typedef struct Queue {
 } Queue;
 
 Queue* queueCreate (int len);
-
+int queueSize (Queue *queue);
+void queueIn (Queue *queue, int data);
+int queueOut (Queue *queue);
+void josephusProblem (int len, int subLen);
 
 
 #endif

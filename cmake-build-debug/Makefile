@@ -201,6 +201,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/queue.o: src/queue.c.o
+.PHONY : src/queue.o
+
+# target to build an object file
+src/queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/queue.c.o
+.PHONY : src/queue.c.o
+
+src/queue.i: src/queue.c.i
+.PHONY : src/queue.i
+
+# target to preprocess a source file
+src/queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/queue.c.i
+.PHONY : src/queue.c.i
+
+src/queue.s: src/queue.c.s
+.PHONY : src/queue.s
+
+# target to generate assembly for a file
+src/queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/queue.c.s
+.PHONY : src/queue.c.s
+
 src/seqList.o: src/seqList.c.o
 .PHONY : src/seqList.o
 
@@ -267,6 +291,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/queue.o"
+	@echo "... src/queue.i"
+	@echo "... src/queue.s"
 	@echo "... src/seqList.o"
 	@echo "... src/seqList.i"
 	@echo "... src/seqList.s"

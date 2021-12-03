@@ -95,6 +95,9 @@
 		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/main.c">
 			<Option target="HOMEWORK.out"/>
 		</Unit>
+		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/queue.c">
+			<Option target="HOMEWORK.out"/>
+		</Unit>
 		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/seqList.c">
 			<Option target="HOMEWORK.out"/>
 		</Unit>

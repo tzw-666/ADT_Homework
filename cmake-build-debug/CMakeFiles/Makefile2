@@ -81,12 +81,12 @@ clean: CMakeFiles/HOMEWORK.out.dir/clean
 CMakeFiles/HOMEWORK.out.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target HOMEWORK.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target HOMEWORK.out"
 .PHONY : CMakeFiles/HOMEWORK.out.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/HOMEWORK.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/HOMEWORK.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/HOMEWORK.out.dir/rule

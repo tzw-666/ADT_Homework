@@ -17,32 +17,37 @@ int queueSize (Queue *queue) {
     return (queue->rear - queue->front + queue->len) % queue->len;
 }
 
-int queueIn (Queue *queue, int data) {
-    int out = 0;
+void queueIn (Queue *queue, int data) {
     if (queue != NULL && (queue->rear + 1) % queue->len != queue->front) {
         queue->rear = (queue->rear + 1) % queue->len;
         queue->data[queue->rear] = data;
-        out = 1;
     }
-    return out;
 }
 
 int queueOut (Queue *queue) {
-    int out = 0;
     if (queue != NULL && queue->rear != queue->front) {
         queue->front = (queue->front + 1) % queue->len;
-        out = 1;
     }
-    return out;
+    return queue->data[queue->front];
 }
 
 void josephusProblem (int len, int subLen) {
-    int *queue = (int *)malloc(sizeof(int) * len + 1) ;
-    for (int i = 1; i <= len; ++i) {
+    int front = 0, rear = len;
+    int out;
+    ++len;
+    int *queue = (int *)malloc(sizeof(int) * len);
+    for (int i = 1; i < len; ++i) {
         queue[i] = i;
     }
-    for (int i = 0; i < 2) {
-
+    while (front != rear) {
+        for (int i = 0; i < subLen - 1;) {
+            front = (front + 1) % len;
+            out = queue[front];
+            rear = (rear + 1) % len;
+            queue[rear] = out;
+        }
+        front = (front + 1) % len;
+        printf("%5d ", queue[front]);
     }
 }
 

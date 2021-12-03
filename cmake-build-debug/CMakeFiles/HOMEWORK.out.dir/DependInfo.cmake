@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/binaryTree.c.o"
   "/home/tzw/Software/Project/C_CPP/Homework/src/linkList.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/linkList.c.o"
   "/home/tzw/Software/Project/C_CPP/Homework/src/main.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/main.c.o"
+  "/home/tzw/Software/Project/C_CPP/Homework/src/queue.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/queue.c.o"
   "/home/tzw/Software/Project/C_CPP/Homework/src/seqList.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/seqList.c.o"
   "/home/tzw/Software/Project/C_CPP/Homework/src/stack.c" "/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir/src/stack.c.o"
   )
