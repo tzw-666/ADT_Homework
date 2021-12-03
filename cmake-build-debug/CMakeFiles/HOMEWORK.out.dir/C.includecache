@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/linkList.h
+stdio.h
+../inc/stdio.h
+stdlib.h
+../inc/stdlib.h
+
+../inc/main.h
+seqList.h
+../inc/seqList.h
+linkList.h
+../inc/linkList.h
+stdio.h
+../inc/stdio.h
+
+../inc/seqList.h
+stdio.h
+../inc/stdio.h
+
+/home/tzw/Software/Project/C_CPP/Homework/src/linkList.c
+linkList.h
+/home/tzw/Software/Project/C_CPP/Homework/src/linkList.h
+
+/home/tzw/Software/Project/C_CPP/Homework/src/main.c
+main.h
+/home/tzw/Software/Project/C_CPP/Homework/src/main.h
+

@@ -1,0 +1,3 @@
+/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tzw/Software/Project/C_CPP/Homework/cmake-build-debug/CMakeFiles/HOMEWORK.out.dir

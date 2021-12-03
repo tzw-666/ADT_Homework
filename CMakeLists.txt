@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.20)
+
+PROJECT(HOMEWORK)
+
+INCLUDE_DIRECTORIES(inc)
+
+FILE(GLOB SRC_LIST "src/*.c")
+
+ADD_EXECUTABLE(${PROJECT_NAME}.out ${SRC_LIST})

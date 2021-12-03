@@ -1,0 +1,1 @@
+/usr/bin/gcc -g -rdynamic CMakeFiles/ADT.dir/main.o CMakeFiles/ADT.dir/seqList.o -o ADT 
