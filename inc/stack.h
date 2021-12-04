@@ -14,5 +14,8 @@ typedef struct {
 } Stack;
 
 Stack* stackCreate (int len);
+void stackPop (Stack *stack);
+void stackPush (Stack *stack, int data);
+int signMatch(char *express, int len);
 
 #endif
