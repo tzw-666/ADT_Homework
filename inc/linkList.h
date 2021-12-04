@@ -1,7 +1,3 @@
-//
-// Created by tzw on 2021/11/26.
-//
-
 #ifndef __LINKLIST_H
 #define __LINKLIST_H
 

@@ -1,6 +1,3 @@
-//
-// Created by tzw on 2021/11/26.
-//
 #include "linkList.h"
 
 /*链表创建*/

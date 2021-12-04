@@ -1,7 +1,3 @@
-//
-// Created by tzw on 2021/12/3.
-//
-
 #include "stack.h"
 
 Stack* stackCreate (int len) {

@@ -1,7 +1,3 @@
-//
-// Created by tzw on 2021/12/3.
-//
-
 #ifndef __STACK_H
 #define __STACK_H
 

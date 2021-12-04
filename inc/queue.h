@@ -1,7 +1,3 @@
-//
-// Created by tzw on 2021/12/3.
-//
-
 #ifndef __QUEUE_H
 #define __QUEUE_H
 
