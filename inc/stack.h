@@ -5,7 +5,7 @@
 #include "stdlib.h"
 
 typedef struct {
-    int data;
+    int *data;
     int top;
 } Stack;
 

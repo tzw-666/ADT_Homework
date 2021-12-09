@@ -48,21 +48,9 @@ stdio.h
 stdlib.h
 ../inc/stdlib.h
 
-/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.c
-binaryTree.h
-/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.h
-
-/home/tzw/Software/Project/C_CPP/Homework/src/linkList.c
-linkList.h
-/home/tzw/Software/Project/C_CPP/Homework/src/linkList.h
-
 /home/tzw/Software/Project/C_CPP/Homework/src/main.c
 main.h
 /home/tzw/Software/Project/C_CPP/Homework/src/main.h
-
-/home/tzw/Software/Project/C_CPP/Homework/src/queue.c
-queue.h
-/home/tzw/Software/Project/C_CPP/Homework/src/queue.h
 
 /home/tzw/Software/Project/C_CPP/Homework/src/stack.c
 stack.h
