@@ -1,9 +1,13 @@
 #include "binaryTree.h"
 
+
+/*二叉查找树创建*/
 BTNode *BSTCreate(int a[], int num) {
     return BSTInsert(NULL, a, num);
 }
 
+
+/*二叉查找树插入结点*/
 BTNode *BSTInsert(BTNode *root, int a[], int num) {
     BTNode *pa, *p, *pNew;
     for (int i = 0; i < num; ++i) {
@@ -28,6 +32,8 @@ BTNode *BSTInsert(BTNode *root, int a[], int num) {
     return root;
 }
 
+
+/*前序遍历（先根遍历）输出*/
 void BTPrePrint(BTNode *root) {
     if (root != NULL) {
         printf("%5d ", root->data);
@@ -36,6 +42,8 @@ void BTPrePrint(BTNode *root) {
     }
 }
 
+
+/*中序遍历（中根遍历）输出*/
 void BTInPrint(BTNode *root) {
     if (root != NULL) {
         BTInPrint(root->left);
@@ -44,6 +52,7 @@ void BTInPrint(BTNode *root) {
     }
 }
 
+/*后序遍历（后根遍历）输出*/
 void BTPostPrint(BTNode *root) {
     if (root != NULL) {
         BTPostPrint(root->left);
@@ -52,6 +61,7 @@ void BTPostPrint(BTNode *root) {
     }
 }
 
+/*层序遍历输出*/
 void BTLeapPrint(BTNode *root) {
     BTNode *p, **queue, *pp;
     int front = 0, rear = 0;
@@ -69,14 +79,20 @@ void BTLeapPrint(BTNode *root) {
     }
 }
 
+
+/*算二叉树的结点数*/
 int BTCountNode (BTNode *root) {
     return root ? BTCountNode(root->left) + BTCountNode(root->right) + 1 : 0;
 }
 
+
+/*算二叉树的叶子结点数*/
 int BTCountLeaf (BTNode *root) {
     return root ? BTCountLeaf(root->left) + BTCountLeaf(root->right) + !root->left && !root->right + 1 : 0;
 }
 
+
+/*从前序遍历和中序遍历还原一棵树*/
 BTNode *BTEstablish (int *preOrder, int *inOrder, int len) {
     BTNode *root = NULL;
     int leftSize = 0, rootInIndex = 0;
@@ -99,6 +115,7 @@ BTNode *BTEstablish (int *preOrder, int *inOrder, int len) {
     return root;
 }
 
+/*得到一颗镜像树*/
 BTNode *BTImage (BTNode *root) {
     BTNode *image;
     if (root) {

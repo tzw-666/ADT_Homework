@@ -168,7 +168,7 @@ Node* linkListAnd (Node *head1, Node *head2) {
     return head;
 }
 
-/*递归求最大值*/
+/*链表递归求最大值*/
 int linkListSearchMax (Node *head) {
     int max;
     if (head->next == NULL) {
@@ -180,7 +180,7 @@ int linkListSearchMax (Node *head) {
     return max;
 }
 
-/*递归求指定值结点地址*/
+/*链表递归求指定值结点地址*/
 Node* linkListSearchNode (Node* head, int key) {
     if (head == NULL || head->data == key) {
         return head;
@@ -189,7 +189,7 @@ Node* linkListSearchNode (Node* head, int key) {
     }
 }
 
-/*递归逆置*/
+/*链表递归逆置*/
 Node* linkListReverse (Node *head) {
     if (head != NULL) {
         head->next = linkListReverse(head->next);

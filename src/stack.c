@@ -1,5 +1,7 @@
 #include "stack.h"
 
+
+/*创建一个栈*/
 Stack* stackCreate (int len) {
     Stack *stack = malloc(sizeof(Stack));
     stack->top = -1;
@@ -7,18 +9,24 @@ Stack* stackCreate (int len) {
     return stack;
 }
 
+
+/*出栈操作*/
 void stackPop (Stack *stack) {
     if (stack != NULL && stack->top >= 0) {
         --stack->top;
     }
 }
 
+
+/*入栈操作*/
 void stackPush (Stack *stack, int data) {
     if (stack != NULL) {
         stack->data[++stack->top] = data;
     }
 }
 
+
+/*表达式符号匹配*/
 int signMatch(char *express, int len) {
     static char stdSign[6] = {'(', '[', '{', ')', ']', '}'};
     static char stack[64] = {0};
@@ -36,8 +44,3 @@ int signMatch(char *express, int len) {
     }
     return top == -1;
 }
-
-
-
-
-

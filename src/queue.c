@@ -1,6 +1,6 @@
 #include "queue.h"
 
-
+/*创建队列*/
 Queue* queueCreate (int len) {
     Queue *queue = (Queue*)malloc(sizeof(Queue));
     queue->data = (int *)malloc(sizeof(int) * (len));
@@ -9,10 +9,12 @@ Queue* queueCreate (int len) {
     return queue;
 }
 
+/*队列的长度*/
 int queueSize (Queue *queue) {
     return (queue->rear - queue->front + queue->len) % queue->len;
 }
 
+/*入队操作*/
 void queueIn (Queue *queue, int data) {
     if (queue != NULL && (queue->rear + 1) % queue->len != queue->front) {
         queue->rear = (queue->rear + 1) % queue->len;
@@ -20,6 +22,7 @@ void queueIn (Queue *queue, int data) {
     }
 }
 
+/*出队操作*/
 int queueOut (Queue *queue) {
     if (queue != NULL && queue->rear != queue->front) {
         queue->front = (queue->front + 1) % queue->len;
@@ -27,6 +30,7 @@ int queueOut (Queue *queue) {
     return queue->data[queue->front];
 }
 
+/*约瑟夫环*/
 void josephusProblem (int len, int subLen) {
     int front = 0, rear = len;
     int out;
@@ -46,5 +50,3 @@ void josephusProblem (int len, int subLen) {
         printf("%5d ", queue[front]);
     }
 }
-
-
