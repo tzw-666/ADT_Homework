@@ -19,17 +19,19 @@ Node* linkListCreate (int n, int a[]) {
 /*链表插入指定位置元素*/
 Node* linkListInsert(Node *head, int key, int pos) {
     Node *curr = head, *prev, *p;
-    int i;
-    for (i = 0; i < pos && curr != NULL; ++i, prev = curr, curr = curr->next);
-    p = (Node*)malloc(sizeof(Node));
-    p->data = key;
-    p->next = NULL;
-    if (curr == head) {
-        p->next = head;
-        head = p;
-    } else if (i < pos) {
-        p->next = curr;
-        prev->next = p;
+    int i = 0;
+    for (; i < pos && curr != NULL; ++i, prev = curr, curr = curr->next);
+    if (i == pos) {
+        p = (Node *) malloc(sizeof(Node));
+        p->data = key;
+        p->next = NULL;
+        if (curr == head) {
+            p->next = head;
+            head = p;
+        } else if (i < pos) {
+            p->next = curr;
+            prev->next = p;
+        }
     }
     return head;
 }
@@ -191,8 +193,56 @@ Node* linkListSearchNode (Node* head, int key) {
 
 /*链表递归逆置*/
 Node* linkListReverse (Node *head) {
-    if (head != NULL) {
-        head->next = linkListReverse(head->next);
+    static Node *newHead, *newTail;
+    if (head && head->next) {
+        linkListReverse(head->next);
+        newTail->next = head;
+        head->next = NULL;
+    } else {
+        newHead = newTail = head;
+    }
+    return newHead;
+}
+
+/*带表头结点链表的创建*/
+Node* LLHCreate (int n, int a[]) {
+    Node *head = NULL, *p, *tail;
+    for (int i = -1; i < n; ++i) {
+        p = (Node*)malloc(sizeof(Node));
+        if (head) {
+            p->data = a[i];
+            p->next = NULL;
+            tail = tail->next = p;
+        } else {
+            tail = head = p;
+        }
+    }
+    return head;
+}
+
+/*带表头结点链表在指定位置插入元素*/
+Node* LLHInsert (Node *head, int key, int pos) {
+    Node *prev = head, *p;
+    int i;
+    for (i = -1; i < pos && prev->next != NULL; ++i, prev = prev->next);
+    if (i == pos) {
+        p = (Node*)malloc(sizeof(Node));
+        p->next = prev->next;
+        prev->next = p;
+    }
+    return head;
+}
+
+
+/*带表头结点链表删除指定值元素*/
+Node* LLHDeleteKeys (Node *head, int key) {
+    Node *prev = head, *p;
+    for (prev = head; prev->next; prev = prev->next) {
+        if (prev->next->data == key) {
+            p = prev->next;
+            prev->next = p->next;
+            free(p);
+        }
     }
     return head;
 }

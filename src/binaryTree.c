@@ -88,9 +88,14 @@ int BTCountNode (BTNode *root) {
 
 /*算二叉树的叶子结点数*/
 int BTCountLeaf (BTNode *root) {
-    return root ? BTCountLeaf(root->left) + BTCountLeaf(root->right) + !root->left && !root->right + 1 : 0;
+    return root ? BTCountLeaf(root->left) + BTCountLeaf(root->right) + !root->left && !root->right : 0;
 }
 
+/*算二叉树的双分支结点个数*/
+int BTCountBranchNode (BTNode *root) {
+    int leftCount = BTCountBranchNode(root->left), rightCount = BTCountBranchNode(root->right);
+    return root ? leftCount + rightCount + root->left && root->right : 0;
+}
 
 /*从前序遍历和中序遍历还原一棵树*/
 BTNode *BTEstablish (int *preOrder, int *inOrder, int len) {
@@ -117,8 +122,8 @@ BTNode *BTEstablish (int *preOrder, int *inOrder, int len) {
 
 /*得到一颗镜像树*/
 BTNode *BTImage (BTNode *root) {
-    BTNode *image;
-    if (root) {
+    BTNode *image = root;
+    if (image) {
         image = (BTNode*) malloc(sizeof(BTNode));
         image->data = root->data;
         image->right = BTImage(root->left);
