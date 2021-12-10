@@ -89,3 +89,11 @@ void seqListInverse (int a[], int n) {
         a[end] = temp;
     }
 }
+
+
+/*顺序表查找*/
+int seqListFindKey (int a[], int n, int key) {
+    int i;
+    for (i = 0; i < n && a[i] != key; ++i);
+    return i == n ? i : -1;
+}

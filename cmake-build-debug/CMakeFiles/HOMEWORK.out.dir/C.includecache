@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-../inc/binaryTree.h
-stdlib.h
-../inc/stdlib.h
+../inc/linkList.h
 stdio.h
 ../inc/stdio.h
+stdlib.h
+../inc/stdlib.h
 
-/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.c
-binaryTree.h
-/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.h
+/home/tzw/Software/Project/C_CPP/Homework/src/linkList.c
+linkList.h
+/home/tzw/Software/Project/C_CPP/Homework/src/linkList.h
 

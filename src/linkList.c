@@ -16,6 +16,16 @@ Node* linkListCreate (int n, int a[]) {
     return head;
 }
 
+Node* linkListPreCreate (int a[], int n) {
+    Node *head = NULL, *p;
+    for (int i = n; i-- > 0;) {
+        p = (Node*)malloc(sizeof(Node));
+        p->data = a[i];
+        p->next = head;
+        head = p;
+    }
+}
+
 /*链表插入指定位置元素*/
 Node* linkListInsert(Node *head, int key, int pos) {
     Node *curr = head, *prev, *p;
@@ -57,22 +67,17 @@ Node *linkListDeleteKeys (Node *head, int key) {
 
 /*链表倒向输出*/
 void linkListPrePrint (Node *head) {
-    printf("linkList:{");
     for (Node *tail = NULL, *p; tail != head; tail = p) {
         for (p = head; p != tail; p = p->next);
-        printf("%d, ", p->data);
+        printf("%5d", p->data);
     }
-    printf("\b\b}");
-
 }
 
 /*链表输出*/
 void linkListPrint (Node *head) {
-    printf("linkList:{");
     for (Node *p = head; p != NULL; p = p->next) {
-        printf("%d, ", p->data);
+        printf("%5d", p->data);
     }
-    printf("\b\b}");
 }
 
 /*链表逆置*/

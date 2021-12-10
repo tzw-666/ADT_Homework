@@ -11,5 +11,6 @@ int seqListDeleteKeysFront(int a[], int n, int key);
 int seqListDeleteKey(int a[], int n, int key);
 int seqListInsetKey(int a[], int n, int key);
 void seqListInverse (int a[], int n);
+int seqListFindKey (int a[], int n, int key);
 
 #endif
