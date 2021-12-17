@@ -19,7 +19,7 @@ typedef struct hashTable {
 Hash* hashCreate (int a[], int n, int len);
 int hashSearch (Hash *hash, int key);
 HashTable * hashTableCreate (int a[], int n, int len);
-Node* HashTableSearch (HashTable *hash, int key);
+Node* hashTableSearch (HashTable *hash, int key);
 
 
 #endif

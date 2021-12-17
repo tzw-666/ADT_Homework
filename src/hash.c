@@ -17,15 +17,15 @@ Hash* hashCreate (int a[], int n, int len) {
 
 /*开放定址法散列查找*/
 int hashSearch (Hash *hash, int key) {
-    int pos;
-    for (pos = key % hash->len; pos < hash->len && hash->len; ++pos);
+    int pos = key % hash->len;
+    for (; pos < hash->len && hash->table[pos] && *hash->table[pos] != key; ++pos);
     if (pos == hash->len) {
         pos = -1;
     }
     return pos;
 }
 
-/*拉链法创建建散列*/
+/*链地址法创建建散列*/
 HashTable * hashTableCreate (int a[], int n, int len) {
     int pos;
     Node *p, *prev, *node;
@@ -49,8 +49,8 @@ HashTable * hashTableCreate (int a[], int n, int len) {
     return hash;
 }
 
-/*拉链法散列查找*/
-Node* HashTableSearch (HashTable *hash, int key) {
+/*链地址法散列查找*/
+Node* hashTableSearch (HashTable *hash, int key) {
     Node *p = hash->table[key % hash->len];
     for (; p && p->data != key; p = p->next);
     return p;
