@@ -1,5 +1,6 @@
 #include "hash.h"
 
+/*开放定址法生成散列*/
 Hash* hashCreate (int a[], int n, int len) {
     int pos;
     Hash *hash = (Hash*)malloc(sizeof(Hash));
@@ -14,6 +15,7 @@ Hash* hashCreate (int a[], int n, int len) {
     return hash;
 }
 
+/*开放定址法散列查找*/
 int hashSearch (Hash *hash, int key) {
     int pos;
     for (pos = key % hash->len; pos < hash->len && hash->len; ++pos);
@@ -23,6 +25,7 @@ int hashSearch (Hash *hash, int key) {
     return pos;
 }
 
+/*拉链法创建建散列*/
 HashTable * hashTableCreate (int a[], int n, int len) {
     int pos;
     Node *p, *prev, *node;
@@ -46,6 +49,7 @@ HashTable * hashTableCreate (int a[], int n, int len) {
     return hash;
 }
 
+/*拉链法散列查找*/
 Node* HashTableSearch (HashTable *hash, int key) {
     Node *p = hash->table[key % hash->len];
     for (; p && p->data != key; p = p->next);
