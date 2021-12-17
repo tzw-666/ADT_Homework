@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HOMEWORK.out.dir/src/binaryTree.c.o"
+  "CMakeFiles/HOMEWORK.out.dir/src/hash.c.o"
   "CMakeFiles/HOMEWORK.out.dir/src/linkList.c.o"
   "CMakeFiles/HOMEWORK.out.dir/src/main.c.o"
   "CMakeFiles/HOMEWORK.out.dir/src/queue.c.o"

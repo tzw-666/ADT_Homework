@@ -5,7 +5,7 @@ int seqListDeleteOdd(int a[], int n) {
     int i, ii;
     for (ii = i = 0; ii < n; ++ii) {
         /*如果a[ii]为奇数，让将其存入a[i]，然后i后移准备存入下一个元素*/
-        if(a[ii] % 2) {
+        if (a[ii] % 2) {
             a[i++] = a[ii];
         }
     }
@@ -40,7 +40,7 @@ int seqListDeleteKeysFront(int a[], int n, int key) {
 int seqListRemoveRepeat(int a[], int n) {
     int i, ii;
     for (i = ii = 0; ii < n; ++ii) {
-        if(a[i] != a[ii]) {
+        if (a[i] != a[ii]) {
             a[++i] = a[ii];
         }
     }
@@ -80,7 +80,7 @@ int seqListInsetKey(int a[], int n, int key) {
 }
 
 /*顺序表逆序*/
-void seqListInverse (int a[], int n) {
+void seqListInverse(int a[], int n) {
     int start, end;
     int temp = 0;
     for (start = 0, end = n - 1; start < end; ++start, --end) {
@@ -92,8 +92,40 @@ void seqListInverse (int a[], int n) {
 
 
 /*顺序表查找*/
-int seqListFindKey (int a[], int n, int key) {
+int seqListFindKey(int a[], int n, int key) {
     int i;
     for (i = 0; i < n && a[i] != key; ++i);
     return i == n ? i : -1;
 }
+
+/*顺序表二分查找*/
+int seqListHalfSearch(int a[], int low, int high, int key) {
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (a[mid] == key) {
+            return mid;
+        } else if (key < a[mid]) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return -1;
+}
+
+/*顺序表递归二分查找*/
+int seqListBinarySearch(int a[], int low, int high, int key) {
+    if (low <= high) {
+        int mid = (low + high) / 2;
+        if (a[mid] == key) {
+            return key;
+        } else if (key < a[mid]) {
+            return seqListBinarySearch(a, low, mid - 1, key);
+        } else {
+            return seqListBinarySearch(a, mid + 1, high, key);
+        }
+    }
+    return -1;
+}
+

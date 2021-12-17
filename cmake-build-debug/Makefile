@@ -153,6 +153,30 @@ src/binaryTree.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/binaryTree.c.s
 .PHONY : src/binaryTree.c.s
 
+src/hash.o: src/hash.c.o
+.PHONY : src/hash.o
+
+# target to build an object file
+src/hash.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/hash.c.o
+.PHONY : src/hash.c.o
+
+src/hash.i: src/hash.c.i
+.PHONY : src/hash.i
+
+# target to preprocess a source file
+src/hash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/hash.c.i
+.PHONY : src/hash.c.i
+
+src/hash.s: src/hash.c.s
+.PHONY : src/hash.s
+
+# target to generate assembly for a file
+src/hash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HOMEWORK.out.dir/build.make CMakeFiles/HOMEWORK.out.dir/src/hash.c.s
+.PHONY : src/hash.c.s
+
 src/linkList.o: src/linkList.c.o
 .PHONY : src/linkList.o
 
@@ -285,6 +309,9 @@ help:
 	@echo "... src/binaryTree.o"
 	@echo "... src/binaryTree.i"
 	@echo "... src/binaryTree.s"
+	@echo "... src/hash.o"
+	@echo "... src/hash.i"
+	@echo "... src/hash.s"
 	@echo "... src/linkList.o"
 	@echo "... src/linkList.i"
 	@echo "... src/linkList.s"

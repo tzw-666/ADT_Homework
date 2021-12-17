@@ -6,6 +6,7 @@
 #include "stack.h"
 #include "seqList.h"
 #include "linkList.h"
+#include "hash.h"
 #include "stdio.h"
 
 #endif

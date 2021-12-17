@@ -4,11 +4,16 @@
 CMakeFiles/HOMEWORK.out.dir/src/binaryTree.c.o
  ../inc/binaryTree.h
  /home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.c
+CMakeFiles/HOMEWORK.out.dir/src/hash.c.o
+ ../inc/hash.h
+ ../inc/linkList.h
+ /home/tzw/Software/Project/C_CPP/Homework/src/hash.c
 CMakeFiles/HOMEWORK.out.dir/src/linkList.c.o
  ../inc/linkList.h
  /home/tzw/Software/Project/C_CPP/Homework/src/linkList.c
 CMakeFiles/HOMEWORK.out.dir/src/main.c.o
  ../inc/binaryTree.h
+ ../inc/hash.h
  ../inc/linkList.h
  ../inc/main.h
  ../inc/queue.h

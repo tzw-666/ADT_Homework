@@ -89,6 +89,9 @@
 		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/binaryTree.c">
 			<Option target="HOMEWORK.out"/>
 		</Unit>
+		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/hash.c">
+			<Option target="HOMEWORK.out"/>
+		</Unit>
 		<Unit filename="/home/tzw/Software/Project/C_CPP/Homework/src/linkList.c">
 			<Option target="HOMEWORK.out"/>
 		</Unit>

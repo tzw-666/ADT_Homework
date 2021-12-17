@@ -12,5 +12,6 @@ int seqListDeleteKey(int a[], int n, int key);
 int seqListInsetKey(int a[], int n, int key);
 void seqListInverse (int a[], int n);
 int seqListFindKey (int a[], int n, int key);
-
+int seqListHalfSearch (int a[], int low, int high, int key);
+int seqListBinarySearch(int a[], int low, int high, int key);
 #endif
