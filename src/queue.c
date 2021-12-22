@@ -40,7 +40,7 @@ void josephusProblem (int len, int subLen) {
         queue[i] = i;
     }
     while (front != rear) {
-        for (int i = 0; i < subLen - 1;) {
+        for (int i = 0; i < subLen - 1; ++i) {
             front = (front + 1) % len;
             out = queue[front];
             rear = (rear + 1) % len;

@@ -6,6 +6,16 @@ BTNode *BSTCreate(int a[], int num) {
     return BSTInsert(NULL, a, num);
 }
 
+BTNode *BTDestruct (BTNode *root) {
+    if (root) {
+        BTDestruct(root->left);
+        BTDestruct(root->right);
+        free(root);
+        root = NULL;
+    }
+    return root;
+}
+
 
 /*二叉查找树插入结点*/
 BTNode *BSTInsert(BTNode *root, int a[], int num) {
@@ -32,44 +42,52 @@ BTNode *BSTInsert(BTNode *root, int a[], int num) {
     return root;
 }
 
-
 /*前序遍历（先根遍历）输出*/
-void BTPrePrint(BTNode *root) {
+int BTPrePrint(BTNode *root, int a[]) {
+    int i = 0;
     if (root != NULL) {
-        printf("%5d ", root->data);
-        BTPrePrint(root->left);
-        BTPrePrint(root->right);
+        a[i++] = root->data;
+        i += BTPrePrint(root->left, a + i);
+        i += BTPrePrint(root->right, a + i);
     }
+    return i;
 }
 
-
 /*中序遍历（中根遍历）输出*/
-void BTInPrint(BTNode *root) {
+int BTInPrint(BTNode *root, int a[]) {
+    int i = 0;
     if (root != NULL) {
-        BTInPrint(root->left);
-        printf("%5d ", root->data);
-        BTInPrint(root->right);
+        i += BTInPrint(root->left, a + i);
+        a[i++] = root->data;
+        i += BTInPrint(root->right, a + i);
     }
+    return i;
 }
 
 /*后序遍历（后根遍历）输出*/
-void BTPostPrint(BTNode *root) {
+int BTPostPrint(BTNode *root, int a[]) {
+    int i = 0;
     if (root != NULL) {
-        BTPostPrint(root->left);
-        BTPostPrint(root->right);
-        printf("%5d ", root->data);
+        i += BTPostPrint(root->left, a + i);
+        i += BTPostPrint(root->right, a + i);
+        a[i++] = root->data;
     }
+    return i;
 }
 
 /*层序遍历输出*/
-void BTLeapPrint(BTNode *root) {
+int BTLeapPrint(BTNode *root, int a[]) {
     BTNode *p, **queue, *pp;
     int front = 0, rear = 0;
     int qLen = 128;
     int temp;
+    int i = 0;
     queue = (BTNode**)malloc(sizeof(BTNode*) * qLen);
-    for (p = root; rear - front || p; front = (front + 1) % qLen) {
-        printf("%5d ", queue[front]->data);
+    queue[rear = (rear + 1) % qLen] = root;
+    while (rear - front) {
+        front = (front + 1) % qLen;
+        p = queue[front];
+        a[i++] = p->data;
         for (pp = p->left, temp = 0; temp < 2; pp = p->right) {
             if (pp) {
                 rear = (rear + 1) % qLen;
@@ -77,24 +95,28 @@ void BTLeapPrint(BTNode *root) {
             }
         }
     }
+    return i;
 }
-
 
 /*算二叉树的结点数*/
 int BTCountNode (BTNode *root) {
     return root ? BTCountNode(root->left) + BTCountNode(root->right) + 1 : 0;
 }
 
-
 /*算二叉树的叶子结点数*/
 int BTCountLeaf (BTNode *root) {
-    return root ? BTCountLeaf(root->left) + BTCountLeaf(root->right) + !root->left && !root->right : 0;
+    return root ? BTCountLeaf(root->left) + BTCountLeaf(root->right) + (!root->left && !root->right) : 0;
 }
 
 /*算二叉树的双分支结点个数*/
 int BTCountBranchNode (BTNode *root) {
-    int leftCount = BTCountBranchNode(root->left), rightCount = BTCountBranchNode(root->right);
-    return root ? leftCount + rightCount + root->left && root->right : 0;
+    int leftCount , rightCount;
+    if (root) {
+        leftCount = BTCountBranchNode(root->left);
+        rightCount = BTCountBranchNode(root->right);
+        return leftCount + rightCount + (root->left && root->right);
+    }
+    return 0;
 }
 
 /*从前序遍历和中序遍历还原一棵树*/
