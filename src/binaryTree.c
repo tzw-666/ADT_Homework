@@ -6,16 +6,14 @@ BTNode *BSTCreate(int a[], int num) {
     return BSTInsert(NULL, a, num);
 }
 
-void BTDestruct (BTNode **BT_root) {
-    BTNode *root = *BT_root;
+/*二叉树删除*/
+void BTDestruct (BTNode *root) {
     if (root) {
-        BTDestruct(&root->left);
-        BTDestruct(&root->right);
+        BTDestruct(root->left);
+        BTDestruct(root->right);
         free(root);
-        *BT_root = NULL;
     }
 }
-
 
 /*二叉查找树插入结点*/
 BTNode *BSTInsert(BTNode *root, int a[], int num) {
@@ -42,7 +40,7 @@ BTNode *BSTInsert(BTNode *root, int a[], int num) {
     return root;
 }
 
-/*前序遍历（先根遍历）输出*/
+/*二叉树前序遍历（先根遍历）*/
 int BTPreOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
@@ -53,7 +51,7 @@ int BTPreOrder(BTNode *root, int a[]) {
     return i;
 }
 
-/*中序遍历（中根遍历）输出*/
+/*二叉树中序遍历（中根遍历）*/
 int BTInOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
@@ -64,7 +62,7 @@ int BTInOrder(BTNode *root, int a[]) {
     return i;
 }
 
-/*后序遍历（后根遍历）输出*/
+/*二叉树后序遍历（后根遍历）*/
 int BTPostOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
@@ -75,7 +73,7 @@ int BTPostOrder(BTNode *root, int a[]) {
     return i;
 }
 
-/*层序遍历输出*/
+/*二叉树层序遍历*/
 int BTLeapOrder(BTNode *root, int a[]) {
     BTNode *p, **queue, *pp;
     int front = 0, rear = 0;

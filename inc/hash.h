@@ -17,6 +17,7 @@ typedef struct hashTable {
 } HashTable;
 
 Hash* hashCreate (int a[], int n, int len);
+void hashDestruct (Hash *hash);
 int hashSearch (Hash *hash, int key);
 HashTable * hashTableCreate (int a[], int n, int len);
 Node* hashTableSearch (HashTable *hash, int key);

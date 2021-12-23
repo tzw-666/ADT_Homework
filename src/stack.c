@@ -9,6 +9,14 @@ Stack* stackCreate (int len) {
     return stack;
 }
 
+/*删除栈*/
+void stackDestruct (Stack *stack) {
+    if (stack) {
+        free(stack->data);
+        free(stack);
+    }
+}
+
 
 /*出栈操作*/
 void stackPop (Stack *stack) {

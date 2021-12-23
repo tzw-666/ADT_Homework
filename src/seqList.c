@@ -1,7 +1,7 @@
 #include "seqList.h"
 
 /*顺序表删除值为偶数的元素*/
-int seqListDeleteOdd(int a[], int n) {
+int seqListDeleteEven(int a[], int n) {
     int i, ii;
     for (ii = i = 0; ii < n; ++ii) {
         /*如果a[ii]为奇数，让将其存入a[i]，然后i后移准备存入下一个元素*/
@@ -45,6 +45,13 @@ int seqListRemoveRepeat(int a[], int n) {
         }
     }
     return i;
+}
+
+/*输出顺序表*/
+void seqListPrint (int a[], int n) {
+    printf("seqList:{");
+    for (int i = 0; i < n; printf("%d, ", a[i++]));
+    printf("\b\b}");
 }
 
 /*将顺序表输出k圈*/
@@ -128,4 +135,5 @@ int seqListBinarySearch(int a[], int low, int high, int key) {
     }
     return -1;
 }
+
 

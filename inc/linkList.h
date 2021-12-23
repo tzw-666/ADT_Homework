@@ -15,6 +15,9 @@ Node* linkListCreate (int n, int a[]);
 /*链表插入指定位置元素*/
 Node* linkListInsert (Node *head, int key, int pos);
 
+/*连表删除*/
+void linkListDestruct (Node *head);
+
 /*链表删除指定值元素*/
 Node *linkListDeleteKeys (Node *head, int key);
 

@@ -15,6 +15,28 @@ Hash* hashCreate (int a[], int n, int len) {
     return hash;
 }
 
+/*删除一个散列*/
+void hashDestruct (Hash *hash) {
+    if (hash) {
+        for(int i = 0; i < hash->len; free(hash->table[i++]));
+        free(hash->table);
+    }
+}
+
+/*删除一个散列*/
+void hashTableDestruct (HashTable *hash) {
+    if (hash) {
+        Node *p, *next;
+        for (int i = 0; i < hash->len; ++i) {
+            for(p = hash->table; p; p = next) {
+                next = p->next;
+                free(p);
+            }
+        }
+        free(hash->table);
+    }
+}
+
 /*开放定址法散列查找*/
 int hashSearch (Hash *hash, int key) {
     int pos = key % hash->len;

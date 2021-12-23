@@ -9,11 +9,12 @@ Queue* queueCreate (int len) {
     return queue;
 }
 
-void queueDestruct (Queue **que) {
-    Queue *queue = *que;
-    free(queue->data);
-    free(queue);
-    *que = NULL;
+/*删除队列*/
+void queueDestruct (Queue *queue) {
+    if (queue) {
+        free(queue->data);
+        free(queue);
+    }
 }
 
 /*队列的长度*/

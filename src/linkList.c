@@ -1,6 +1,6 @@
 #include "linkList.h"
 
-/*链表创建*/
+/*尾插建链*/
 Node* linkListCreate (int n, int a[]) {
     Node *head = NULL, *p, *tail;
     for (int i = 0; i < n; ++i) {
@@ -16,6 +16,7 @@ Node* linkListCreate (int n, int a[]) {
     return head;
 }
 
+/*头插建链*/
 Node* linkListPreCreate (int a[], int n) {
     Node *head = NULL, *p;
     for (int i = n; i-- > 0;) {
@@ -23,6 +24,14 @@ Node* linkListPreCreate (int a[], int n) {
         p->data = a[i];
         p->next = head;
         head = p;
+    }
+}
+
+/*连表删除*/
+void linkListDestruct (Node *head) {
+    for (Node *next; head; head = next) {
+        next = head->next;
+        free(head);
     }
 }
 

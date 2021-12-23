@@ -2,8 +2,7 @@
 #include "time.h"
 
 int main(void) {
-    int a[30], b[30], c[10];
-    int ac, bc, cc;
+    int a[10], b[10], c[10];
     int num = sizeof(a) / sizeof(*a);
     srand(time(NULL));
     for (int i = 0; i < num ; ++i) {
@@ -11,7 +10,12 @@ int main(void) {
         b[i] = rand() % 100;
     }
     BTNode *root = BSTCreate(a, num);
+    BTInOrder(root, a);
+    for (int i = 0; i < num; ++i) {
+        printf("%5d", a[i]);
+    }
+    printf("\n");
     BTDestruct(&root);
-    printf("%d", (int)root);
+    printf("len:%d", BTInOrder(root, a));
     return 0;
 }
