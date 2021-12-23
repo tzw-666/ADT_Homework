@@ -11,6 +11,7 @@ typedef struct Queue {
 } Queue;
 
 Queue* queueCreate (int len);
+void queueDestruct (Queue **queue);
 int queueSize (Queue *queue);
 void queueIn (Queue *queue, int data);
 int queueOut (Queue *queue);

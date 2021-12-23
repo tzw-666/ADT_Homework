@@ -6,14 +6,14 @@ BTNode *BSTCreate(int a[], int num) {
     return BSTInsert(NULL, a, num);
 }
 
-BTNode *BTDestruct (BTNode *root) {
+void BTDestruct (BTNode **BT_root) {
+    BTNode *root = *BT_root;
     if (root) {
-        BTDestruct(root->left);
-        BTDestruct(root->right);
+        BTDestruct(&root->left);
+        BTDestruct(&root->right);
         free(root);
-        root = NULL;
+        *BT_root = NULL;
     }
-    return root;
 }
 
 
@@ -43,40 +43,40 @@ BTNode *BSTInsert(BTNode *root, int a[], int num) {
 }
 
 /*前序遍历（先根遍历）输出*/
-int BTPrePrint(BTNode *root, int a[]) {
+int BTPreOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
         a[i++] = root->data;
-        i += BTPrePrint(root->left, a + i);
-        i += BTPrePrint(root->right, a + i);
+        i += BTPreOrder(root->left, a + i);
+        i += BTPreOrder(root->right, a + i);
     }
     return i;
 }
 
 /*中序遍历（中根遍历）输出*/
-int BTInPrint(BTNode *root, int a[]) {
+int BTInOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
-        i += BTInPrint(root->left, a + i);
+        i += BTInOrder(root->left, a + i);
         a[i++] = root->data;
-        i += BTInPrint(root->right, a + i);
+        i += BTInOrder(root->right, a + i);
     }
     return i;
 }
 
 /*后序遍历（后根遍历）输出*/
-int BTPostPrint(BTNode *root, int a[]) {
+int BTPostOrder(BTNode *root, int a[]) {
     int i = 0;
     if (root != NULL) {
-        i += BTPostPrint(root->left, a + i);
-        i += BTPostPrint(root->right, a + i);
+        i += BTPostOrder(root->left, a + i);
+        i += BTPostOrder(root->right, a + i);
         a[i++] = root->data;
     }
     return i;
 }
 
 /*层序遍历输出*/
-int BTLeapPrint(BTNode *root, int a[]) {
+int BTLeapOrder(BTNode *root, int a[]) {
     BTNode *p, **queue, *pp;
     int front = 0, rear = 0;
     int qLen = 128;

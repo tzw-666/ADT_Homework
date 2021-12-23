@@ -9,10 +9,10 @@ typedef struct bTNode {
     struct bTNode *left, *right;
 } BTNode;
 
-int BTPrePrint(BTNode *root, int a[]);
-int BTInPrint(BTNode *root, int a[]);
-int BTPostPrint(BTNode *root, int a[]);
-int BTLeapPrint(BTNode *root, int a[]);
+int BTPreOrder(BTNode *root, int a[]);
+int BTInOrder(BTNode *root, int a[]);
+int BTPostOrder(BTNode *root, int a[]);
+int BTLeapOrder(BTNode *root, int a[]);
 
 int BTCountNode (BTNode *root);
 int BTCountLeaf (BTNode *root);
@@ -20,7 +20,7 @@ int BTCountBranchNode (BTNode *root);
 BTNode *BTEstablish (int *preOrder, int *inOrder, int len);
 
 BTNode* BSTCreate (int a[], int num);
-BTNode *BTDestruct (BTNode *root);
+void BTDestruct (BTNode **BT_root);
 BTNode* BSTInsert (BTNode *root, int a[], int num);
 BTNode *BTImage (BTNode *root);
 #endif

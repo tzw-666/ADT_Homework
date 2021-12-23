@@ -4,9 +4,16 @@
 Queue* queueCreate (int len) {
     Queue *queue = (Queue*)malloc(sizeof(Queue));
     queue->data = (int *)malloc(sizeof(int) * (len));
-    queue->data = queue->front = 0;
+    queue->rear = queue->front = 0;
     queue->len = len;
     return queue;
+}
+
+void queueDestruct (Queue **que) {
+    Queue *queue = *que;
+    free(queue->data);
+    free(queue);
+    *que = NULL;
 }
 
 /*队列的长度*/
